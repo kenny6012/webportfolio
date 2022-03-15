@@ -21,7 +21,7 @@
             <div class="display_B text_sub"> <fa :icon="['fa', 'globe-asia']"/> &ensp; {{ address }} </div>
           </div>
           <!-- SKILLS -->
-          <div class="side_panel scroller">
+          <div class="side_panel">
             <div class="display_B text_title"> Skills: </div>
             <div class="skill_set" v-for="(skills, s) in skills" :key="'s'+s">
               <div class="display_B text_title2">{{ skills.skill }}</div>
