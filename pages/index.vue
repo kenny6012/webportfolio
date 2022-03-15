@@ -86,18 +86,22 @@ data() {
   }
 },
 mounted() {
-  const side_container_height = this.$refs.side_cont.offsetHeight;
-
-  var needed_height = parseFloat(side_container_height) * 0.70; // 70 percent
-  this.final_height = parseInt(needed_height);
-
   // GET MAIN LAYOUT'S HEIGHT
   var main_layout = parseInt(this.$refs.main_layout.offsetHeight);
+
+  // GET SIDE CONTAINER'S HEIGHT
+  const side_container_height = this.$refs.side_cont.offsetHeight;
+  var needed_height;
 
   console.log(main_layout);
   if(main_layout < 733) {
     alert("Redirecting to mobile version");
+    needed_height = parseFloat(side_container_height) * 0.65; // 70 percent
   }
+  else {
+    needed_height = parseFloat(side_container_height) * 0.70; // 70 percent
+  }
+  this.final_height = parseInt(needed_height);
 
 },
 created() {
