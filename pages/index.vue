@@ -54,6 +54,7 @@
 <script>
 import Contents from "../components/contents.vue";
 import Header from "../components/header.vue";
+
 export default {
 name: 'IndexPage',
 components: {

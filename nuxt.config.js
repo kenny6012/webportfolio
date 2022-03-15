@@ -1,3 +1,5 @@
+import { library, config } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false;
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -16,7 +18,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/vVERSION/css/svg-with-js.css' }
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css' }
     ]
   },
 
@@ -35,6 +37,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: ["@nuxtjs/fontawesome"],
   fontawesome: {
+    autoAddCss: false,
     component: "fa",
     icons: {
       solid: [
@@ -166,5 +169,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    
   }
 }
