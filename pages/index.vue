@@ -1,5 +1,5 @@
 <template>
-  <div class="main_layout">
+  <div class="main_layout" ref="main_layout">
     <div class="side_layout">
 
       <div class="side_container" ref="side_cont">
@@ -90,9 +90,15 @@ mounted() {
 
   var needed_height = parseFloat(side_container_height) * 0.70; // 70 percent
   this.final_height = parseInt(needed_height);
-  console.log(side_container_height);
-  console.log(needed_height);
-  console.log(this.final_height);
+
+  // GET MAIN LAYOUT'S HEIGHT
+  var main_layout = parseInt(this.$refs.main_layout.offsetHeight);
+
+  console.log(main_layout);
+  if(main_layout < 733) {
+    alert("Redirecting to mobile version");
+  }
+
 },
 created() {
   var sh = screen.height;
