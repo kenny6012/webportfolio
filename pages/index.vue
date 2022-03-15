@@ -63,7 +63,7 @@ components: {
 data() {
   return {
     computedHeight: "",
-    name: "Genevie Mindajao",
+    name: "Genevie Mindajao II",
     title: "UX Designer / Front-End Developer",
     email: "gen.mindajao@gmail.com",
     mobile: "(+63) 977-781-3785",
@@ -87,7 +87,7 @@ data() {
 mounted() {
   const side_container_height = this.$refs.side_cont.offsetHeight;
 
-  var needed_height = parseFloat(side_container_height) * 0.71; // 71 percent
+  var needed_height = parseFloat(side_container_height) * 0.70; // 70 percent
   this.final_height = parseInt(needed_height);
   console.log(side_container_height);
   console.log(needed_height);
