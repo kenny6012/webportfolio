@@ -76,7 +76,7 @@ $text2: #c2d7e9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c5c5c5;
+  background: #ffffff31;
   border-radius: 100px;
 }
 
@@ -169,7 +169,7 @@ $text2: #c2d7e9;
   // margin-bottom: 15px;
 }
 .text_sub {
-  margin-top: 5px;
+  margin-top: 10px;
   margin-left: 15px;
   color: $text2;
   font-size: 12px;
@@ -191,6 +191,12 @@ $text2: #c2d7e9;
   height: 7px;
   background: $BG4;
   border-radius: 100px;
+}
+.scroller {
+  width: auto;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .content_layout {
   // border: 1px solid black;

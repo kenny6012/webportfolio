@@ -7,8 +7,8 @@
         <div class="side_header">
           <div class="side_picture"></div>
           <div class="side_profile">
-            <div class="profile_name">Fname M. Surname</div>
-            <div class="profile_title">Main Profile Title</div>
+            <div class="profile_name">{{ name }}</div>
+            <div class="profile_title">{{ title }}</div>
           </div>
         </div>
         <!-- SIDE CONTENTS -->
@@ -16,13 +16,13 @@
           <!-- CONTACTS -->
           <div class="side_panel">
             <div class="display_B text_title"> Contacts: </div>
-            <div class="display_B text_sub"> <fa :icon="['fa', 'envelope']"/> &ensp; sample@email.com </div>
-            <div class="display_B text_sub"> <fa :icon="['fa', 'phone-square']"/> &ensp; +63 900 000 0000 </div>
-            <div class="display_B text_sub"> <fa :icon="['fa', 'globe-asia']"/> &ensp; Sample City 0000, Country </div>
+            <div class="display_B text_sub"> <fa :icon="['fa', 'envelope']"/> &ensp; {{ email }} </div>
+            <div class="display_B text_sub"> <fa :icon="['fa', 'phone-square']"/> &ensp; {{ mobile }} </div>
+            <div class="display_B text_sub"> <fa :icon="['fa', 'globe-asia']"/> &ensp; {{ address }} </div>
           </div>
           <!-- SKILLS -->
           <div class="side_panel scroller">
-            <div class="display_B text_title"> Specializations: </div>
+            <div class="display_B text_title"> Skills: </div>
             <div class="skill_set" v-for="(skills, s) in skills" :key="'s'+s">
               <div class="display_B text_title2">{{ skills.skill }}</div>
               <div class="display_B prog_bar">
@@ -30,6 +30,12 @@
               </div>
             </div>
           </div>
+           <!-- KNOWLEDGE -->
+          <div class="side_panel scroller">
+            <div class="display_B text_title"> Knowledgable in: </div>
+            <div class="display_B text_sub" v-for="(know, k) in knowledge" :key="'k'+k"> <fa :icon="['fa', 'check-circle']"/> &ensp; {{ know.skill }} </div>
+          </div>
+
         </div>
 
       </div>
@@ -46,16 +52,25 @@ export default {
 name: 'IndexPage',
 data() {
   return {
+    name: "Kenn Brian Nillama",
+    title: "UX Designer/Artist",
     computedHeight: "",
+    email: "sample@email.com",
+    mobile: "+63 (900) 000 0000",
+    address: "Sample City 0000, Country",
     skills: [
-      { skill: "Adobe Photoshop", lvl: 80 },
-      { skill: "Adobe Illustrator", lvl: 60 },
-      { skill: "Vue JS", lvl: 80 },
-      { skill: "React JS", lvl: 10 },
-      { skill: "HTML", lvl: 95 },
-      { skill: "CSS", lvl: 95 },
-      { skill: "Javascript", lvl: 70 },
-    ]
+      { skill: "Adobe Photoshop", lvl: 85 },
+      { skill: "Adobe Illustrator", lvl: 85 },
+      { skill: "Vue JS", lvl: 75 },
+      { skill: "Bootstrap", lvl: 70 },
+    ],
+    knowledge: [
+      { skill: "Graphic Designing", lvl: 70 },
+      { skill: "Web Designing", lvl: 70 },
+      { skill: "UX Designing", lvl: 80 },
+      { skill: "Traditional Illustrating", lvl: 10 },
+      { skill: "Digital Illustrating", lvl: 10 }
+    ],
   }
 },
 components: {
