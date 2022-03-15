@@ -6,7 +6,6 @@
           <span class="cover_sub">who has worked with multi-cultural and diverse team and has holistic knowledge of software development and design.</span>
 
       </div>
-      <div class="faded_black"></div>
   </div>
 </template>
 
@@ -35,14 +34,5 @@ computed: {
 }
 .header_d {
     z-index: 2;
-}
-.faded_black {
-    background: #00000082;
-    width: 100%;
-    height: 300px;
-    border-radius: 10px;
-    position: relative;
-    top: -302px;
-    left: 0px;
 }
 </style>

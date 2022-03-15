@@ -2,7 +2,7 @@
   <div class="main_layout">
     <div class="side_layout">
 
-      <div class="side_container">
+      <div class="side_container" ref="side_cont">
         <!-- SIDE HEADER -->
         <div class="side_header">
           <div class="side_picture"></div>
@@ -11,31 +11,34 @@
             <div class="profile_title">{{ title }}</div>
           </div>
         </div>
-        <!-- SIDE CONTENTS -->
-        <div class="side_content">
-          <!-- CONTACTS -->
-          <div class="side_panel">
-            <div class="display_B text_title"> Contacts: </div>
-            <div class="display_B text_sub"> <fa :icon="['fa', 'envelope']"/> &ensp; {{ email }} </div>
-            <div class="display_B text_sub"> <fa :icon="['fa', 'phone-square']"/> &ensp; {{ mobile }} </div>
-            <div class="display_B text_sub"> <fa :icon="['fa', 'globe-asia']"/> &ensp; {{ address }} </div>
-          </div>
-          <!-- SKILLS -->
-          <div class="side_panel">
-            <div class="display_B text_title"> Skills: </div>
-            <div class="skill_set" v-for="(skills, s) in skills" :key="'s'+s">
-              <div class="display_B text_title2">{{ skills.skill }}</div>
-              <div class="display_B prog_bar">
-                <div class="prog" :style="'width:'+skills.lvl+'%;'"></div>
+        <!-- SCROLLABLE SIDE -->
+        <div class="side_scroll" :style="'height:'+final_height+'px;'">
+          <!-- SIDE CONTENTS -->
+          <div class="side_content">
+            <!-- CONTACTS -->
+            <div class="side_panel">
+              <div class="display_B text_title"> Contacts:</div>
+              <div class="display_B text_sub"> <fa :icon="['fa', 'envelope']"/> &ensp; {{ email }} </div>
+              <div class="display_B text_sub"> <fa :icon="['fa', 'phone-square']"/> &ensp; {{ mobile }} </div>
+              <div class="display_B text_sub"> <fa :icon="['fa', 'globe-asia']"/> &ensp; {{ address }} </div>
+            </div>
+            <!-- SKILLS -->
+            <div class="side_panel">
+              <div class="display_B text_title"> Skills: </div>
+              <div class="skill_set" v-for="(skills, s) in skills" :key="'s'+s">
+                <div class="display_B text_title2">{{ skills.skill }}</div>
+                <div class="display_B prog_bar">
+                  <div class="prog" :style="'width:'+skills.lvl+'%;'"></div>
+                </div>
               </div>
             </div>
-          </div>
-           <!-- KNOWLEDGE -->
-          <div class="side_panel scroller">
-            <div class="display_B text_title"> Knowledgable in: </div>
-            <div class="display_B text_sub" v-for="(know, k) in knowledge" :key="'k'+k"> <fa :icon="['fa', 'check-circle']"/> &ensp; {{ know.skill }} </div>
-          </div>
+            <!-- KNOWLEDGE -->
+            <div class="side_panel">
+              <div class="display_B text_title"> Knowledgable in: </div>
+              <div class="display_B text_sub" v-for="(know, k) in knowledge" :key="'k'+k"> <fa :icon="['fa', 'check-circle']"/> &ensp; {{ know.skill }} </div>
+            </div>
 
+          </div>
         </div>
 
       </div>
@@ -78,17 +81,24 @@ data() {
       { skill: "Microsoft Office Tools" },
       { skill: "SAP Business One" },
     ],
+    final_height: ""
   }
 },
-components: {
+mounted() {
+  const side_container_height = this.$refs.side_cont.offsetHeight;
 
+  var needed_height = parseFloat(side_container_height) * 0.71; // 71 percent
+  this.final_height = parseInt(needed_height);
+  console.log(side_container_height);
+  console.log(needed_height);
+  console.log(this.final_height);
 },
 created() {
   var sh = screen.height;
   this.computedHeight = parseInt(sh) - 111; //111 is the chrome tabs + address bar heights
 },
 computed: {
-  
+
 }
 }
 </script>
