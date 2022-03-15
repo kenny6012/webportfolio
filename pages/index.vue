@@ -72,11 +72,11 @@ data() {
       { skill: "Adobe Photoshop", lvl: 60 },
     ],
     knowledge: [
-      { skill: "Github / Bitbucket", lvl: 80 },
-      { skill: "JIRA", lvl: 80 },
-      { skill: "Confluence", lvl: 70 },
-      { skill: "Microsoft Office Tools", lvl: 70 },
-      { skill: "SAP Business One", lvl: 10 },
+      { skill: "Github / Bitbucket" },
+      { skill: "JIRA" },
+      { skill: "Confluence" },
+      { skill: "Microsoft Office Tools" },
+      { skill: "SAP Business One" },
     ],
   }
 },
