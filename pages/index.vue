@@ -42,34 +42,41 @@
 
     </div>
     <div :style="'height:'+computedHeight+'px;'" class="content_layout" >
-      Contents Here
+      <Header/>
+      <Contents/>
     </div>
   </div>
 </template>
 
 <script>
+import Contents from "../components/contents.vue";
+import Header from "../components/header.vue";
 export default {
 name: 'IndexPage',
+components: {
+  Contents,
+  Header
+},
 data() {
   return {
-    name: "Kenn Brian Nillama",
-    title: "UX Designer/Artist",
     computedHeight: "",
-    email: "sample@email.com",
-    mobile: "+63 (900) 000 0000",
-    address: "Sample City 0000, Country",
+    name: "Genevie Mindajao",
+    title: "UX Designer / Front-End Developer",
+    email: "gen.mindajao@gmail.com",
+    mobile: "(+63) 977-781-3785",
+    address: "General Santos City 9500, Mindanao, Philippines",
     skills: [
-      { skill: "Adobe Photoshop", lvl: 85 },
-      { skill: "Adobe Illustrator", lvl: 85 },
-      { skill: "Vue JS", lvl: 75 },
-      { skill: "Bootstrap", lvl: 70 },
+      { skill: "Vue, Vuex", lvl: 80 },
+      { skill: "React, Redux", lvl: 80 },
+      { skill: "Bootstrap, Bootstrap Vue", lvl: 90 },
+      { skill: "Adobe Photoshop", lvl: 60 },
     ],
     knowledge: [
-      { skill: "Graphic Designing", lvl: 70 },
-      { skill: "Web Designing", lvl: 70 },
-      { skill: "UX Designing", lvl: 80 },
-      { skill: "Traditional Illustrating", lvl: 10 },
-      { skill: "Digital Illustrating", lvl: 10 }
+      { skill: "Github / Bitbucket", lvl: 80 },
+      { skill: "JIRA", lvl: 80 },
+      { skill: "Confluence", lvl: 70 },
+      { skill: "Microsoft Office Tools", lvl: 70 },
+      { skill: "SAP Business One", lvl: 10 },
     ],
   }
 },
@@ -85,3 +92,11 @@ computed: {
 }
 }
 </script>
+
+<style lang="scss">
+.side_picture{
+  background-image: url("../assets/pic2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>

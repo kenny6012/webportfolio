@@ -115,8 +115,8 @@ $text2: #c2d7e9;
 }
 .side_picture {
   margin: auto;
-  width: 120px;
-  height: 120px;
+  width: 85px;
+  height: 85px;
   background: #ffffff57;
   margin-top: 40px;
   border-radius: 100px;
@@ -174,6 +174,7 @@ $text2: #c2d7e9;
   color: $text2;
   font-size: 12px;
   font-family: font_M;
+  line-height: 1.8;
 }
 .skill_set {
   width: 100%;
@@ -182,13 +183,13 @@ $text2: #c2d7e9;
 }
 .prog_bar {
   width: 100%;
-  height: 8px;
+  height: 5px;
   background: $BG1;
   border-radius: 100px;
   margin-top: 8px;
 }
 .prog {
-  height: 7px;
+  height: 4px;
   background: $BG4;
   border-radius: 100px;
 }
@@ -200,7 +201,37 @@ $text2: #c2d7e9;
 }
 .content_layout {
   // border: 1px solid black;
-
   width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 25px;
+  padding-left: 0px;
 }
+// HEADER
+.main_header {
+  // background: $BG2;
+  background: #ffffff57;
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+}
+.header_d {
+  padding: 50px 60px;
+  width: 100%;
+  height: fit-content;
+  padding-top: 130px;
+}
+.cover_title {
+  font-size: 50px;
+  font-family: font_B;
+  color: $text1;
+  display: block;
+}
+.cover_sub {
+  display: block;
+  font-size: 15px;
+  font-family: font_R;
+  color: $text1;
+}
+
 
