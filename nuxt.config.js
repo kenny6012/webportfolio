@@ -143,6 +143,8 @@ export default {
         "faMobile",
         "faPhoneSquare",
         "faGlobeAsia",
+        "faSchool",
+        "faStar",
         
       ],
       brands: [

@@ -64,7 +64,7 @@ components: {
 data() {
   return {
     computedHeight: "",
-    name: "Genevie Mindajao II",
+    name: "Genevie Mindajao",
     title: "UX Designer / Front-End Developer",
     email: "gen.mindajao@gmail.com",
     mobile: "(+63) 977-781-3785",
@@ -96,7 +96,10 @@ mounted() {
   console.log(main_layout);
   if(main_layout < 733) {
     alert("Redirecting to mobile version");
-    needed_height = parseFloat(side_container_height) * 0.65; // 70 percent
+    needed_height = parseFloat(side_container_height) * 0.65; // 65 percent
+  }
+  else if(main_layout > 800) {
+    needed_height = parseFloat(side_container_height) * 0.99; // 80 percent
   }
   else {
     needed_height = parseFloat(side_container_height) * 0.70; // 70 percent
