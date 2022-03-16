@@ -1,5 +1,5 @@
 <template>
-  <div class="main_layout" ref="main_layout">
+  <div class="main_layout" ref="main_layout" :style="'width: '+final_width+'px;'">
     <div class="side_layout">
 
       <div class="side_container" ref="side_cont">
@@ -63,6 +63,7 @@ components: {
 },
 data() {
   return {
+    final_width: "",
     computedHeight: "",
     name: "Genevie Mindajao",
     title: "UX Designer / Front-End Developer",
@@ -88,12 +89,23 @@ data() {
 mounted() {
   // GET MAIN LAYOUT'S HEIGHT
   var main_layout = parseInt(this.$refs.main_layout.offsetHeight);
+  var main_layout_w = parseInt(this.$refs.main_layout.offsetWidth);
 
   // GET SIDE CONTAINER'S HEIGHT
   const side_container_height = this.$refs.side_cont.offsetHeight;
   var needed_height;
 
-  console.log(main_layout);
+  // FOR WIDTH
+  if(main_layout_w > 1300) {
+    this.final_width = 1344;
+  }
+  else {
+    this.final_width = main_layout_w;
+  }
+  console.log(this.final_width);
+  console.log(main_layout_w);
+
+  // console.log(main_layout);
   if(main_layout < 733) {
     alert("Redirecting to mobile version");
     needed_height = parseFloat(side_container_height) * 0.65; // 65 percent

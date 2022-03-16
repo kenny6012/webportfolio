@@ -8,7 +8,7 @@
       </button>
 
       <!-- PANELS -->
-      <div class="panel_container" v-for="(data, d) in panels" :key="'d'+d" :ref="data.id">
+      <div class="panel_container" v-for="(data, d) in panels" :key="'d'+d" :ref="data.id" :id="data.id">
       <div class="panel_title">{{ data.title }}</div>
         <div class="panel_content" v-for="(cont, c) in data.contents" :key="'c'+c">
           <div class="content_title">{{ cont.title }}</div>
@@ -126,9 +126,11 @@ data() {
 },
 methods: {
   scrollView(refName) {
-    var el = this.$refs.refName;
-    console.log(refName);
-    console.log(el);
+    // this.$refs[refName].scrollIntoView();
+    // console.log(refName);
+    // console.log(this.$refs[refName]);
+    // console.log(this.$refs[refName][0].id);
+    document.getElementById(refName).scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start'  });
   }
 },
 mounted() {
